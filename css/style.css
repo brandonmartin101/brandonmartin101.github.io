@@ -283,7 +283,7 @@ footer .footer-below {
 
 /*-------------------------------------------------- misc styles */
 .alert.alert-success {
-    width: 35%;
+    width: 100%;
     margin: 0 auto;
     background-color: white;
     color: #505050;
