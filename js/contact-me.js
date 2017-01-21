@@ -3,7 +3,7 @@ $(function() {
     var baseUrl = "https://cryptic-reef-39583.herokuapp.com/brandon-martin-mail/";
     // wake heroku dyno for contact form
     $.ajax({
-        urL: baseUrl
+        url: baseUrl
     }).done(function(data) {
         //woke heroku dyno for contact form
     });
