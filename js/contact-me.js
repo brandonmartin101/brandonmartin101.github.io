@@ -1,5 +1,13 @@
 $(function() {
 
+    var baseUrl = "https://cryptic-reef-39583.herokuapp.com/brandon-martin-mail/";
+    // wake heroku dyno for contact form
+    $.ajax({
+        urL: baseUrl
+    }).done(function(data) {
+        //woke heroku dyno for contact form
+    });
+    
     // check form and ping Heroku app to process email
     $("#submit-btn").click(function() {
         var contact = {
@@ -13,7 +21,6 @@ $(function() {
             event.preventDefault();
             console.log("tests passed");
             // AJAX
-            var baseUrl = "https://cryptic-reef-39583.herokuapp.com/brandon-martin-mail/";
             var queryString = contact.name+"/"+contact.email+"/"+contact.message+"/"+contact.phone
             $.ajax({
                 url: baseUrl+queryString
