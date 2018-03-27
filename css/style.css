@@ -1,290 +1,342 @@
-/*----------------------------------------- general element styles */
+/* green: #428f2a */
+/* blue: #0b4168 */
+/* yellow: #c7c93c */
+
+@font-face {
+  font-family: 'Fira Sans';
+  src: url('../fonts/Fira Sans regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Fira Sans';
+  src: url('../fonts/Fira Sans italic.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Fira Sans';
+  src: url('../fonts/Fira Sans 600.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Fira Sans';
+  src: url('../fonts/Fira Sans 600italic.ttf') format('truetype');
+  font-weight: 600;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Fira Sans';
+  src: url('../fonts/Fira Sans 300.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Fira Sans';
+  src: url('../fonts/Fira Sans 300italic.ttf') format('truetype');
+  font-weight: 300;
+  font-style: italic;
+}
+
+::selection {
+  background: #428f2a;
+  color: #fff;
+}
+::-moz-selection {
+  background: #428f2a;
+  color: #fff;
+}
+
 body {
-    overflow-x: hidden;
-    font-family: "Fira Sans", sans-serif;
-    font-weight: 300;
+  overflow-x: hidden;
+  font-family: 'Fira Sans', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  margin: 0;
+  background: transparent url(../img/triangles.svg) 0 0 / cover fixed no-repeat;
+  background-color: #c7c93c;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25'%3E%3Cdefs%3E%3ClinearGradient id='a' gradientUnits='userSpaceOnUse' x1='0' x2='0' y1='0' y2='100%25' gradientTransform='rotate(18)'%3E%3Cstop offset='0' stop-color='%23c7c93c'/%3E%3Cstop offset='1' stop-color='%230b4168'/%3E%3C/linearGradient%3E%3Cpattern patternUnits='userSpaceOnUse' id='b' width='555' height='462.6' x='0' y='0' viewBox='0 0 1080 900'%3E%3Cg fill-opacity='0.13'%3E%3Cpolygon fill='%23444' points='90%2C150 0%2C300 180%2C300'/%3E%3Cpolygon points='90%2C150 180%2C0 0%2C0'/%3E%3Cpolygon fill='%23AAA' points='270%2C150 360%2C0 180%2C0'/%3E%3Cpolygon fill='%23DDD' points='450%2C150 360%2C300 540%2C300'/%3E%3Cpolygon fill='%23999' points='450%2C150 540%2C0 360%2C0'/%3E%3Cpolygon points='630%2C150 540%2C300 720%2C300'/%3E%3Cpolygon fill='%23DDD' points='630%2C150 720%2C0 540%2C0'/%3E%3Cpolygon fill='%23444' points='810%2C150 720%2C300 900%2C300'/%3E%3Cpolygon fill='%23FFF' points='810%2C150 900%2C0 720%2C0'/%3E%3Cpolygon fill='%23DDD' points='990%2C150 900%2C300 1080%2C300'/%3E%3Cpolygon fill='%23444' points='990%2C150 1080%2C0 900%2C0'/%3E%3Cpolygon fill='%23DDD' points='90%2C450 0%2C600 180%2C600'/%3E%3Cpolygon points='90%2C450 180%2C300 0%2C300'/%3E%3Cpolygon fill='%23666' points='270%2C450 180%2C600 360%2C600'/%3E%3Cpolygon fill='%23AAA' points='270%2C450 360%2C300 180%2C300'/%3E%3Cpolygon fill='%23DDD' points='450%2C450 360%2C600 540%2C600'/%3E%3Cpolygon fill='%23999' points='450%2C450 540%2C300 360%2C300'/%3E%3Cpolygon fill='%23999' points='630%2C450 540%2C600 720%2C600'/%3E%3Cpolygon fill='%23FFF' points='630%2C450 720%2C300 540%2C300'/%3E%3Cpolygon points='810%2C450 720%2C600 900%2C600'/%3E%3Cpolygon fill='%23DDD' points='810%2C450 900%2C300 720%2C300'/%3E%3Cpolygon fill='%23AAA' points='990%2C450 900%2C600 1080%2C600'/%3E%3Cpolygon fill='%23444' points='990%2C450 1080%2C300 900%2C300'/%3E%3Cpolygon fill='%23222' points='90%2C750 0%2C900 180%2C900'/%3E%3Cpolygon points='270%2C750 180%2C900 360%2C900'/%3E%3Cpolygon fill='%23DDD' points='270%2C750 360%2C600 180%2C600'/%3E%3Cpolygon points='450%2C750 540%2C600 360%2C600'/%3E%3Cpolygon points='630%2C750 540%2C900 720%2C900'/%3E%3Cpolygon fill='%23444' points='630%2C750 720%2C600 540%2C600'/%3E%3Cpolygon fill='%23AAA' points='810%2C750 720%2C900 900%2C900'/%3E%3Cpolygon fill='%23666' points='810%2C750 900%2C600 720%2C600'/%3E%3Cpolygon fill='%23999' points='990%2C750 900%2C900 1080%2C900'/%3E%3Cpolygon fill='%23999' points='180%2C0 90%2C150 270%2C150'/%3E%3Cpolygon fill='%23444' points='360%2C0 270%2C150 450%2C150'/%3E%3Cpolygon fill='%23FFF' points='540%2C0 450%2C150 630%2C150'/%3E%3Cpolygon points='900%2C0 810%2C150 990%2C150'/%3E%3Cpolygon fill='%23222' points='0%2C300 -90%2C450 90%2C450'/%3E%3Cpolygon fill='%23FFF' points='0%2C300 90%2C150 -90%2C150'/%3E%3Cpolygon fill='%23FFF' points='180%2C300 90%2C450 270%2C450'/%3E%3Cpolygon fill='%23666' points='180%2C300 270%2C150 90%2C150'/%3E%3Cpolygon fill='%23222' points='360%2C300 270%2C450 450%2C450'/%3E%3Cpolygon fill='%23FFF' points='360%2C300 450%2C150 270%2C150'/%3E%3Cpolygon fill='%23444' points='540%2C300 450%2C450 630%2C450'/%3E%3Cpolygon fill='%23222' points='540%2C300 630%2C150 450%2C150'/%3E%3Cpolygon fill='%23AAA' points='720%2C300 630%2C450 810%2C450'/%3E%3Cpolygon fill='%23666' points='720%2C300 810%2C150 630%2C150'/%3E%3Cpolygon fill='%23FFF' points='900%2C300 810%2C450 990%2C450'/%3E%3Cpolygon fill='%23999' points='900%2C300 990%2C150 810%2C150'/%3E%3Cpolygon points='0%2C600 -90%2C750 90%2C750'/%3E%3Cpolygon fill='%23666' points='0%2C600 90%2C450 -90%2C450'/%3E%3Cpolygon fill='%23AAA' points='180%2C600 90%2C750 270%2C750'/%3E%3Cpolygon fill='%23444' points='180%2C600 270%2C450 90%2C450'/%3E%3Cpolygon fill='%23444' points='360%2C600 270%2C750 450%2C750'/%3E%3Cpolygon fill='%23999' points='360%2C600 450%2C450 270%2C450'/%3E%3Cpolygon fill='%23666' points='540%2C600 630%2C450 450%2C450'/%3E%3Cpolygon fill='%23222' points='720%2C600 630%2C750 810%2C750'/%3E%3Cpolygon fill='%23FFF' points='900%2C600 810%2C750 990%2C750'/%3E%3Cpolygon fill='%23222' points='900%2C600 990%2C450 810%2C450'/%3E%3Cpolygon fill='%23DDD' points='0%2C900 90%2C750 -90%2C750'/%3E%3Cpolygon fill='%23444' points='180%2C900 270%2C750 90%2C750'/%3E%3Cpolygon fill='%23FFF' points='360%2C900 450%2C750 270%2C750'/%3E%3Cpolygon fill='%23AAA' points='540%2C900 630%2C750 450%2C750'/%3E%3Cpolygon fill='%23FFF' points='720%2C900 810%2C750 630%2C750'/%3E%3Cpolygon fill='%23222' points='900%2C900 990%2C750 810%2C750'/%3E%3Cpolygon fill='%23222' points='1080%2C300 990%2C450 1170%2C450'/%3E%3Cpolygon fill='%23FFF' points='1080%2C300 1170%2C150 990%2C150'/%3E%3Cpolygon points='1080%2C600 990%2C750 1170%2C750'/%3E%3Cpolygon fill='%23666' points='1080%2C600 1170%2C450 990%2C450'/%3E%3Cpolygon fill='%23DDD' points='1080%2C900 1170%2C750 990%2C750'/%3E%3C/g%3E%3C/pattern%3E%3C/defs%3E%3Crect x='0' y='0' fill='url(%23a)' width='100%25' height='100%25'/%3E%3Crect x='0' y='0' fill='url(%23b)' width='100%25' height='100%25'/%3E%3C/svg%3E");
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
 }
 p {
-    font-size: 20px;
-    font-style: italic;
-    margin: 0 0 25px;
+  line-height: 1.4em;
+  font-style: italic;
+  margin: 0 0 25px;
 }
 textarea {
-    resize: none;
+  resize: none;
 }
 a,
 a:hover,
 a:focus,
 a:active,
 a.active {
-    outline: 0;
-    color: #018E13;
+  outline: 0;
+  color: #428f2a;
 }
 section {
-    padding: 100px 0;
+  padding: 40px 15px;
 }
-section h2 {
-    margin: 0;
-    font-size: 3em;
+button[type='submit'] {
+  margin-top: 20px;
+  background-color: #428f2a;
+  border: none;
+  padding: 12px 25px;
+  color: #fff;
+  font-size: 80%;
+  font-weight: 600;
 }
-button[type="submit"] {
-    margin-top: 20px;
-    background-color: #AAA;
+button[type='submit']:hover {
+  background-color: #027511;
+}
+input,
+textarea {
+  width: calc(100% - 28px);
+  padding: 0 12px;
+  margin-bottom: 5px;
+  font-size: 100%;
+  font-family: 'Fira Sans', sans-serif;
+}
+input {
+  height: 50px;
+}
+textarea {
+  height: 150px;
+  padding-top: 15px;
 }
 
-/*------------------------------------------ other general styles */
-/* general section settings */
-section.success a,
-section.success a:hover,
-section.success a:focus,
-section.success a:active,
-section.success a.active {
-    outline: 0;
-    color: #2c3e50;
+header {
+  text-align: center;
+  color: #222;
+  background: #fff;
+  background-size: cover;
+  padding: 30px 15px;
 }
-@media(max-width:767px) {
-    section {
-        padding: 75px 0;
-    }
-    section.first {
-        padding-top: 75px;
-    }
+header > div,
+header > p {
+  max-width: 500px;
+  margin: 0 auto 25px;
+}
+header .intro-text .name {
+  display: block;
+  font-size: 1.7em;
+}
+header .intro-text .skills {
+  font-size: 1.15em;
+}
+footer {
+  color: #fff;
+  background-color: #101010;
+  font-size: 14px;
+  padding: 20px 0;
 }
 
-/* general button settings */
+.center {
+  text-align: center;
+}
+.list-inline {
+  list-style-type: none;
+}
 .btn-outline {
-    margin-top: 15px;
-    border: solid 2px #fff;
-    font-size: 20px;
-    color: #fff;
-    background: 0 0;
-    transition: all .3s ease-in-out;
+  margin-top: 15px;
+  border: solid 2px #fff;
+  font-size: 20px;
+  color: #fff;
+  background: 0 0;
+  transition: all 0.3s ease-in-out;
 }
 .btn-outline:hover,
 .btn-outline:focus,
 .btn-outline:active,
 .btn-outline.active {
-    border: solid 2px #fff;
-    color: #018e13;
-    background: #fff;
+  border: solid 2px #fff;
+  color: #428f2a;
+  background: #fff;
 }
 .btn-social {
-    display: inline-block;
-    width: 50px;
-    height: 50px;
-    border: 2px solid #fff;
-    border-radius: 100%;
-    text-align: center;
-    font-size: 20px;
-    line-height: 45px;
+  display: inline-block;
 }
-.btn:focus, .btn:active, .btn.active {
-    outline: 0;
+.btn-social:first-child {
+  margin-right: 20px;
 }
-
-/*-------------------------------------------- section-specific styles */
-
-
-/*-------------------------------------------- navbar section */
-.navbar {
-    font-weight: 400;
+.btn-social svg {
+  width: 50px;
+  height: 50px;
+  fill: #222;
+  stroke: #222;
+  transition: 0.2s;
 }
-.navbar a:focus {
-    outline: 0;
+.btn-social:hover svg {
+  fill: #428f2a;
+  stroke: #428f2a;
 }
-.navbar .navbar-nav {
-    letter-spacing: 1px;
+.btn:focus,
+.btn:active,
+.btn.active {
+  outline: 0;
 }
-.navbar .navbar-nav li a:focus {
-    outline: 0;
-}
-.navbar-default {
-    background-color: transparent;
-}
-.navbar-default,
-.navbar-inverse {
-    border: 0;
-}
-@media(min-width:768px) {
-    .navbar-fixed-top {
-        padding: 10px 0;
-        -webkit-transition: padding .3s;
-        -moz-transition: padding .3s;
-        transition: padding .3s;
-    }
-    .navbar-fixed-top .navbar-brand {
-        font-size: 2em;
-        -webkit-transition: all .3s;
-        -moz-transition: all .3s;
-        transition: all .3s;
-    }
-    .navbar-fixed-top.navbar-shrink {
-        padding: 0;
-        background-color: #2c3e50;
-    }
-    .navbar-fixed-top.navbar-shrink .navbar-brand {
-        font-size: 1.5em;
-    }
-}
-#fixed-navbar {
-    background-color: #333;
-    background-image: none;
-    box-shadow: 0 2px 4px #252525;
+.img-responsive {
+  max-width: 100%;
+  margin: 0 0 -5px;
 }
 
-/*-------------------------------------------- header section styles */
-header {
-    text-align: center;
-    color: #fff;
-    background: url(../img/top-img.jpg);
-    background-size: cover;
-    text-shadow: 0 0 15px black;
+/* ---------------------- Portfolio Section ----------------- */
+.intro-text {
+  margin-bottom: 25px;
 }
-header .container {
-    padding-top: 100px;
-    padding-bottom: 50px;
+.portfolio-items {
+  padding: 10px 0;
 }
-header .intro-text .name {
-    display: block;
-    font-size: 2em;
+.portfolio-items a {
+  border: 1px solid silver;
 }
-header .intro-text .skills {
-    font-size: 1.25em;
-    font-style: italic;
+.portfolio-items .portfolio-link {
+  display: block;
+  position: relative;
+  margin: 0 auto 15px auto;
+  max-width: 400px;
 }
-@media(min-width:768px) {
-    header .container {
-        padding-top: 200px;
-        padding-bottom: 100px;
-    }
-    header .intro-text .name {
-        font-size: 4.75em;
-    }
-    header .intro-text .skills {
-        font-size: 1.75em;
-    }
-}
-
-/*--------------------------------------------- about section styles */
-#about {
-    color: white;
-    background: #333;
-}
-#about h2 {
-    margin: 0 0 40px 0;
-}
-
-/*--------------------------------------------- portfolio section styles */
-.portfolio-item {
-    padding: 10px;
-}
-.portfolio-item a {
-    border: 1px solid silver;
-}
-.portfolio-item .portfolio-link {
-    display: block;
-    position: relative;
-    margin: 20px auto 0 auto;
-    max-width: 400px;
-}
-.portfolio-link.double {
-    max-width: 800px;
+.portfolio-items .portfolio-link:last-child {
+  margin-bottom: 30px;
 }
 .caption {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    opacity: 0;
-    background: #018e13;
-    -webkit-transition: all ease .5s;
-    -moz-transition: all ease .5s;
-    transition: all ease .5s;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  background: #428f2a;
+  -webkit-transition: all ease 0.5s;
+  -moz-transition: all ease 0.5s;
+  transition: all ease 0.5s;
 }
 .caption:hover {
-    opacity: 1;
+  opacity: 1;
 }
 .caption .caption-content {
-    position: absolute;
-    top: 40%;
-    width: 100%;
-    height: 20px;
-    margin-top: -12px;
-    text-align: center;
-    font-size: 20px;
-    color: #fff;
+  position: absolute;
+  top: 15%;
+  width: 100%;
+  height: 20px;
+  margin-top: -12px;
+  text-align: center;
+  font-size: 18px;
+  color: #fff;
 }
 .caption .caption-content.small-content {
-    top: 32%;
+  top: 32%;
 }
 .caption .caption-content i {
-    margin-top: -12px;
+  margin-top: -12px;
 }
 .caption .caption-content h3,
 .caption .caption-content h4 {
-    margin: 0;
+  margin: 0;
 }
-@media(max-width:768px) {
-    .caption-content p,
-    .caption-content.small-content small {
-        font-size: 75%;
-    }
+.caption .caption-content h3,
+.caption .caption-content p {
+  padding: 0 15px;
 }
-@media(max-width:600px) {
-    .caption-content.small-content small {
-        font-size: 55%;
-    }
+.caption .caption-content h3 {
+  margin-bottom: 10px;
 }
-#portfolio {
-    background-color: #e8e8e8;
+.caption .caption-content p {
+  margin-bottom: 0;
 }
-#portfolio h2 {
-    margin: 10px 0 40px 0;
+.portfolio-section {
+  background: transparent;
+  padding: 0 20px;
+}
+.portfolio-section h2 {
+  margin: 0 -20px 20px;
+  background: #428f2a;
+  color: #fff;
+  padding: 20px 0;
 }
 
-/*--------------------------------------------- contact section styles */
+/* --------------- Contact Section ------------------- */
+.contact-section {
+  margin: 0 auto;
+  clear: both;
+  background: white;
+}
 .section-subheading {
-    margin-bottom: 25px;
+  margin-bottom: 25px;
 }
-#contact h2 {
-    margin: 10px 0 30px 0;
-}
-#contact {
-    color: white;
-    text-shadow: 0 0 15px black;
-    background: url(../img/bottom-img.jpg);
-    background-size: cover;
-}
-#name, #email, #phone {
-    height: 50px;
-    padding-left: 12px;
-}
-#message {
-    height: 150px;
+.contact-section > div {
+  max-width: 450px;
+  margin: 0 auto;
 }
 
-/*-------------------------------------------- footer section styles */
-footer {
-    color: #fff;
+/* ------------------ Media Queries -------------------- */
+@media (min-width: 500px) and (max-width: 767px) {
+  .portfolio-link {
+    width: 48%;
+  }
+  .portfolio-link:nth-child(2n + 1) {
+    float: left;
+  }
+  .portfolio-link:nth-child(2n) {
+    float: right;
+  }
 }
-footer h3 {
-    margin-bottom: 30px;
+@media (max-width: 767px) {
+  .caption-content p,
+  .caption-content.small-content small {
+    font-size: 70%;
+  }
+  .caption-content.small-content small {
+    font-size: 55%;
+  }
 }
-footer .footer-above {
-    background-color: #101010;
+@media (min-width: 768px) {
+  body {
+    padding-left: 330px;
+  }
+  header {
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 300px;
+    box-shadow: 0 0 10px #222;
+  }
+  footer {
+    clear: both;
+  }
+  input,
+  textarea {
+    font-size: 90%;
+  }
+
+  .portfolio-link {
+    width: 48%;
+  }
+  .caption .caption-content {
+    top: 25%;
+  }
 }
-footer .footer-col p {
-    padding-top: 10px;
-    font-size: 14px;
-}
-footer .footer-below {
-    padding: 25px 0;
-    background-color: #233140;
+@media (min-width: 768px) (max-width: 1199px) {
+  .portfolio-link:nth-child(2n + 1) {
+    float: left;
+  }
+  .portfolio-link:nth-child(2n) {
+    float: right;
+  }
 }
 
-/*-------------------------------------------------- misc styles */
-.alert.alert-success {
-    width: 100%;
-    margin: 0 auto;
-    background-color: white;
-    color: #505050;
+@media (min-width: 1200px) {
+  .portfolio-items .portfolio-link {
+    width: 31%;
+    margin: 0 1% 15px;
+    float: left;
+  }
+  .portfolio-items .portfolio-link:nth-child(3n + 1) {
+    clear: left;
+  }
+  .caption .caption-content {
+    font-size: 16px;
+  }
 }

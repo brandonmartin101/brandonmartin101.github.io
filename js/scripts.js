@@ -1,30 +1,33 @@
-// jQuery for page scrolling feature - requires jQuery Easing plugin
-$(function() {
+var baseUrl = "https://cryptic-reef-39583.herokuapp.com/";
+// wake heroku dyno for contact form
+var xhr = new XMLHttpRequest();
+xhr.open('GET', baseUrl);
+xhr.onload = function () { }
+xhr.send();
 
-    var viewportHeight = $(window).height();
-    $("header").height(viewportHeight);
-    $(".name").css("padding-top",viewportHeight*0.1);
-
-    $('a[href*="#"]:not([href="#"])').click(function() {
-    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
-      var target = $(this.hash);
-      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-      if (target.length) {
-        $('html, body').animate({
-          scrollTop: target.offset().top
-        }, 500);
-        return false;
-      }
+// check form and ping Heroku app to process email
+document.getElementById('submit-btn').addEventListener('click', function (e) {
+    var contact = {
+        'name': encodeURIComponent(document.getElementById('name').value),
+        'email': encodeURIComponent(document.getElementById('email').value),
+        'phone': (document.getElementById('phone').value) ? encodeURIComponent(document.getElementById('phone').value) : 'no phone',
+        'message': encodeURIComponent(document.getElementById('message').value)
     }
-  });
-});
+    console.log(contact);
+    if (contact.name && contact.email && contact.message) {
+        event.preventDefault();
+        console.log('tests passed');
+        var queryString = 'brandon-martin-mail' + '/' + contact.name + "/" + contact.email + "/" + contact.message + "/" + contact.phone;
 
-// Highlight the top nav as scrolling occurs
-$('body').scrollspy({
-    target: '.navbar-fixed-top'
-})
-
-// Closes the Responsive Menu on Menu Item Click
-$('.navbar-collapse ul li a').click(function() {
-    $('.navbar-toggle:visible').click();
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET', baseUrl + queryString);
+        xhr.onload = function () {
+            if (xhr.status === 200) {
+                console.log('request completed');
+            } else {
+                console.log('mail error');
+            }
+        }
+        xhr.send();
+    }
 });
