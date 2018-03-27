@@ -1,3 +1,37 @@
+@font-face {
+  font-family: 'Fira Sans';
+  src: url('../fonts/Fira Sans regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Fira Sans';
+  src: url('../fonts/Fira Sans italic.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Fira Sans';
+  src: url('../fonts/Fira Sans 300.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Fira Sans';
+  src: url('../fonts/Fira Sans 300italic.ttf') format('truetype');
+  font-weight: 300;
+  font-style: italic;
+}
+
+::selection {
+  background: #018e13;
+  color: #fff;
+}
+::-moz-selection {
+  background: #018e13;
+  color: #fff;
+}
+
 body {
   overflow-x: hidden;
   font-family: 'Fira Sans', sans-serif;
@@ -26,7 +60,31 @@ section {
 }
 button[type='submit'] {
   margin-top: 20px;
-  background-color: #aaa;
+  background-color: #018e13;
+  border: none;
+  padding: 12px 25px;
+  color: #fff;
+  font-size: 80%;
+}
+button[type='submit']:hover {
+  background-color: #027511;
+}
+input, textarea {
+  width: calc(100% - 28px);
+  padding: 0 12px;
+  font-size: 100%;
+  font-family: 'Fira Sans', sans-serif;
+}
+input:hover, input:focus, input:active,
+textarea:hover, textarea:focus, textarea:active {
+  outline: auto 3px #018e13;
+}
+input {
+  height: 50px;
+}
+textarea {
+  height: 150px;
+  padding-top: 15px;
 }
 
 header {
@@ -42,22 +100,12 @@ header .intro-text .name {
 }
 header .intro-text .skills {
   font-size: 1.25em;
-  font-style: italic;
 }
 footer {
   color: #fff;
   background-color: #101010;
   font-size: 14px;
   padding: 20px 0;
-}
-
-::selection {
-  background: #018e13;
-  color: #fff;
-}
-::-moz-selection {
-  background: #018e13;
-  color: #fff;
 }
 
 .center {
@@ -91,8 +139,8 @@ footer {
 .btn-social svg {
   width: 50px;
   height: 50px;
-  fill: #fff;
-  stroke: #fff;
+  fill: #222;
+  stroke: #222;
   transition: 0.2s;
 }
 .btn-social:hover svg {
@@ -104,12 +152,15 @@ footer {
 .btn.active {
   outline: 0;
 }
+.img-responsive {
+  max-width: 100%;
+}
 
 .intro-text {
   margin-bottom: 25px;
 }
 .portfolio-item {
-  padding: 10px;
+  padding: 10px 0;
 }
 .portfolio-item a {
   border: 1px solid silver;
@@ -138,7 +189,7 @@ footer {
 }
 .caption .caption-content {
   position: absolute;
-  top: 40%;
+  top: 20%;
   width: 100%;
   height: 20px;
   margin-top: -12px;
@@ -156,11 +207,21 @@ footer {
 .caption .caption-content h4 {
   margin: 0;
 }
+.caption .caption-content h3,
+.caption .caption-content p {
+  padding: 0 15px;
+}
+.caption .caption-content h3 {
+  margin-bottom: 10px;
+}
+.caption .caption-content p {
+  margin-bottom: 0;
+}
 .portfolio-section {
   background-color: #e8e8e8;
 }
 .portfolio-section h2 {
-  margin: 10px 0 40px 0;
+  margin: 10px 0 20px 0;
 }
 
 .section-subheading {
@@ -181,15 +242,6 @@ footer {
   text-shadow: 0 0 15px black;
   background: url(../img/bottom-img.jpg);
   background-size: cover;
-}
-#name,
-#email,
-#phone {
-  height: 50px;
-  padding-left: 12px;
-}
-#message {
-  height: 150px;
 }
 
 @media (max-width: 767px) {
