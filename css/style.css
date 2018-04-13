@@ -203,30 +203,14 @@ footer {
   margin-bottom: 30px;
 }
 .caption {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  opacity: 0;
   background: #428f2a;
-  -webkit-transition: all ease 0.5s;
-  -moz-transition: all ease 0.5s;
   transition: all ease 0.5s;
-}
-.caption:hover {
-  opacity: 1;
+  padding: 15px;
 }
 .caption .caption-content {
-  position: absolute;
-  top: 15%;
-  width: 100%;
-  height: 20px;
-  margin-top: -12px;
   text-align: center;
   font-size: 18px;
   color: #fff;
-}
-.caption .caption-content.small-content {
-  top: 32%;
 }
 .caption .caption-content i {
   margin-top: -12px;
@@ -235,11 +219,8 @@ footer {
 .caption .caption-content h4 {
   margin: 0;
 }
-.caption .caption-content h3,
-.caption .caption-content p {
-  padding: 0 15px;
-}
 .caption .caption-content h3 {
+  font-size: 1em;
   margin-bottom: 10px;
 }
 .caption .caption-content p {
@@ -312,10 +293,13 @@ footer {
   }
 
   .portfolio-link {
-    width: 48%;
+    width: 70%;
   }
   .caption .caption-content {
     top: 25%;
+  }
+  .caption .caption-content p {
+    font-size: 80%;
   }
 }
 @media (min-width: 768px) (max-width: 1199px) {
@@ -328,6 +312,10 @@ footer {
 }
 
 @media (min-width: 1200px) {
+  .portfolio-items {
+    max-width: 1300px;
+    margin: 0 auto;
+  }
   .portfolio-items .portfolio-link {
     width: 31%;
     margin: 0 1% 15px;
