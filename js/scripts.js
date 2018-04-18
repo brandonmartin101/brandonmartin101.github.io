@@ -1,9 +1,15 @@
-var baseUrl = "https://cryptic-reef-39583.herokuapp.com/";
-// wake heroku dyno for contact form
-var xhr = new XMLHttpRequest();
-xhr.open('GET', baseUrl);
-xhr.onload = function () { }
-xhr.send();
+// wake all heroku dynos that are linked by the site
+var wakeUrls = [
+    'https://cryptic-reef-39583.herokuapp.com/',
+    'https://bpm-ghost.herokuapp.com/',
+    'https://bpm-react-todo.herokuapp.com/',
+    'https://bpm-vue-imgur.herokuapp.com/',
+    'https://bpm-wordpress.herokuapp.com/'
+];
+// ping them one by one
+for (var i = 0; i < wakeUrls.length; i++) {
+    document.getElementById('page-top').insertAdjacentHTML('beforeend', '<script src="' + wakeUrls[i] + '"></script>');
+}
 
 // check form and ping Heroku app to process email
 document.getElementById('submit-btn').addEventListener('click', function (e) {
