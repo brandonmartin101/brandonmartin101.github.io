@@ -1,4 +1,4 @@
-// wake all heroku dynos that are linked by the site
+// attempt to wake all heroku dynos that are linked by the site
 var wakeUrls = [
     'https://cryptic-reef-39583.herokuapp.com/',
     'https://bpm-ghost.herokuapp.com/',
