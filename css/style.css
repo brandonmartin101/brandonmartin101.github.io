@@ -228,10 +228,10 @@ footer {
 }
 .portfolio-section {
   background: transparent;
-  padding: 0 20px;
+  padding: 0 15px;
 }
 .portfolio-section h2 {
-  margin: 0 -20px 20px;
+  margin: 0 -15px 20px;
   background: #428f2a;
   color: #fff;
   padding: 20px 0;
@@ -254,10 +254,11 @@ footer {
 /* ------------------ Media Queries -------------------- */
 @media (min-width: 500px) and (max-width: 767px) {
   .portfolio-link {
-    width: 48%;
+    width: 47.3%;
   }
   .portfolio-link:nth-child(2n + 1) {
     float: left;
+    clear: left;
   }
   .portfolio-link:nth-child(2n) {
     float: right;
@@ -293,7 +294,7 @@ footer {
   }
 
   .portfolio-link {
-    width: 70%;
+    width: 90%;
   }
   .caption .caption-content {
     top: 25%;
@@ -302,9 +303,13 @@ footer {
     font-size: 80%;
   }
 }
-@media (min-width: 768px) (max-width: 1199px) {
+@media (min-width: 992px) and (max-width: 1199px) {
+  .portfolio-link {
+    width: 48%;
+  }
   .portfolio-link:nth-child(2n + 1) {
     float: left;
+    clear: left;
   }
   .portfolio-link:nth-child(2n) {
     float: right;
