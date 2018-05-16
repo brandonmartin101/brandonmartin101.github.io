@@ -178,10 +178,6 @@ footer {
 .btn.active {
   outline: 0;
 }
-.img-responsive {
-  max-width: 100%;
-  margin: 0 0 -5px;
-}
 
 /* ---------------------- Portfolio Section ----------------- */
 .intro-text {
@@ -332,4 +328,41 @@ footer {
   .caption .caption-content {
     font-size: 16px;
   }
+}
+
+/* LAZY LOADING STYLES */
+/* progressive-image.js, v1.2 */
+/* by Craig Buckler, @craigbuckler */
+/* MIT License */
+.progressive {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  outline: none;
+}
+
+.progressive img {
+  display: block;
+  width: 100%;
+  max-width: none;
+  height: auto;
+  border: 0 none;
+}
+
+.progressive img.preview {
+  filter: blur(2vw);
+  transform: scale(1.05);
+}
+
+.progressive img.reveal {
+  position: absolute;
+  left: 0;
+  top: 0;
+  will-change: opacity;
+  animation: reveal .5s ease-out;
+}
+
+@keyframes reveal {
+	0% { opacity: 0; }
+	100% { opacity: 1; }
 }
