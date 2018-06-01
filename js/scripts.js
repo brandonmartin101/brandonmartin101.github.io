@@ -15,6 +15,7 @@ for (var i = 0; i < wakeUrls.length; i++) {
 /* CONTACT FORM SCRIPT */
 // check form and ping Heroku app to process email
 document.getElementById('submit-btn').addEventListener('click', function (e) {
+    var baseUrl = "https://cryptic-reef-39583.herokuapp.com/kalie-studio-mail/";
     var contact = {
         'name': encodeURIComponent(document.getElementById('name').value),
         'email': encodeURIComponent(document.getElementById('email').value),
