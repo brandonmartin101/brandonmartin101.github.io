@@ -15,6 +15,8 @@ for (var i = 0; i < wakeUrls.length; i++) {
 /* CONTACT FORM SCRIPT */
 // check form and ping Heroku app to process email
 document.getElementById('submit-btn').addEventListener('click', function (e) {
+    document.querySelector('.contact-section .form-result > div').classList.remove('show');
+    document.querySelector('.contact-section .loading-icon').classList.add('show');
     var baseUrl = "https://cryptic-reef-39583.herokuapp.com/";
     var contact = {
         'name': encodeURIComponent(document.getElementById('name').value),
@@ -22,22 +24,26 @@ document.getElementById('submit-btn').addEventListener('click', function (e) {
         'phone': (document.getElementById('phone').value) ? encodeURIComponent(document.getElementById('phone').value) : 'no phone',
         'message': encodeURIComponent(document.getElementById('message').value)
     }
-    console.log(contact);
     if (contact.name && contact.email && contact.message) {
         event.preventDefault();
-        console.log('tests passed');
         var queryString = 'brandon-martin-mail' + '/' + contact.name + "/" + contact.email + "/" + contact.message + "/" + contact.phone;
 
         var xhr = new XMLHttpRequest();
         xhr.open('GET', baseUrl + queryString);
         xhr.onload = function () {
+            document.querySelector('.contact-section .loading-icon').classList.remove('show');
             if (xhr.status === 200) {
-                console.log('request completed');
+                document.querySelector('.contact-section .form-result .success').classList.add('show');
+                document.querySelector('.contact-section .form-result .error').classList.remove('show');
             } else {
-                console.log('mail error');
+                document.querySelector('.contact-section .form-result .success').classList.remove('show');
+                document.querySelector('.contact-section .form-result .error').classList.add('show');
             }
         }
         xhr.send();
+    } else {
+        document.querySelector('.contact-section .loading-icon').classList.remove('show');
+        document.querySelector('.contact-section .form-result .error').classList.add('show');
     }
 });
 
@@ -87,9 +93,7 @@ if (window.addEventListener && window.requestAnimationFrame && document.getEleme
 
     // replace with full image
     function loadFullImage(item) {
-        console.log(item.dataset.src);
         var href = item && (item.getAttribute('data-img-src') || item.href);
-        console.log(href)
         if (!href) return;
         // load image
         var img = new Image();

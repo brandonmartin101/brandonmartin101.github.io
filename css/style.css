@@ -246,6 +246,35 @@ footer {
   max-width: 450px;
   margin: 0 auto;
 }
+.contact-section .loading-icon,
+.contact-section .form-result > div {
+  visibility: hidden;
+}
+.contact-section .loading-icon {
+  margin: 20px 0 0;
+}
+.contact-section .loading-icon.show {
+  visibility: visible;
+}
+.contact-section .loading-icon svg {
+  fill: #428f2a;
+  stroke: #428f2a;
+}
+.contact-section .form-result > div {
+  height: 65px;
+}
+.contact-section .form-result > .show {
+  visibility: visible;
+}
+.contact-section .form-result > :not(.show) {
+  display: none;
+}
+.contact-section .form-result .success {
+  color: #428f2a;
+}
+.contact-section .form-result .error {
+  color: #a00;
+}
 
 /* ------------------ Media Queries -------------------- */
 @media (min-width: 500px) and (max-width: 767px) {
