@@ -1,0 +1,2 @@
+# Optional: Redirect default Netlify subdomain to primary domain
+https://vigorous-pare-0cb38f.netlify.com/* https://brandonpmartin.com/:splat 301!
