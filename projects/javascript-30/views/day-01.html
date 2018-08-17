@@ -1,0 +1,57 @@
+<div id="day-01-wrap">
+  <h1>
+    Day 1
+  </h1>
+
+  <div class="keys">
+    <div data-key="87" class="key triple" onclick="playSound(87)">
+      <kbd>W</kbd>
+      <span class="sound">openhat</span>
+    </div>
+    <div data-key="73" class="key triple" onclick="playSound(73)">
+      <kbd>I</kbd>
+      <span class="sound">ride</span>
+    </div>
+    <div data-key="65" class="key single" onclick="playSound(65)">
+      <kbd>A</kbd>
+      <span class="sound">clap</span>
+    </div>
+    <div data-key="83" class="key single" onclick="playSound(83)">
+      <kbd>S</kbd>
+      <span class="sound">hihat</span>
+    </div>
+    <div data-key="68" class="key single" onclick="playSound(68)">
+      <kbd>D</kbd>
+      <span class="sound">boom</span>
+    </div>
+    <div data-key="74" class="key single" onclick="playSound(74)">
+      <kbd>J</kbd>
+      <span class="sound">snare</span>
+    </div>
+    <div data-key="75" class="key single" onclick="playSound(75)">
+      <kbd>K</kbd>
+      <span class="sound">tom</span>
+    </div>
+    <div data-key="76" class="key single" onclick="playSound(76)">
+      <kbd>L</kbd>
+      <span class="sound">tink</span>
+    </div>
+    <div data-key="32" class="key wide" onclick="playSound(32)">
+      <kbd>Space</kbd>
+      <span class="sound">kick</span>
+    </div>
+  </div>
+
+  <button id="auto-play" onclick="autoPlay()">Auto-Play</button>
+  <button id="stop-auto-play" onclick="stopAutoPlay()" disabled>Stop Auto-Play</button>
+
+  <audio data-key="65" id="key65" src="https://cdn.glitch.com/b10f4528-cf24-4eac-9dd3-ee827ac19144%2Fday01-clap.wav?1533243022622"></audio>
+  <audio data-key="83" id="key83" src="https://cdn.glitch.com/b10f4528-cf24-4eac-9dd3-ee827ac19144%2Fday01-hihat.wav?1533243022756"></audio>
+  <audio data-key="32" id="key32" src="https://cdn.glitch.com/b10f4528-cf24-4eac-9dd3-ee827ac19144%2Fday01-kick.wav?1533243022832"></audio>
+  <audio data-key="87" id="key87" src="https://cdn.glitch.com/b10f4528-cf24-4eac-9dd3-ee827ac19144%2Fday01-openhat.wav?1533243023355"></audio>
+  <audio data-key="68" id="key68" src="https://cdn.glitch.com/b10f4528-cf24-4eac-9dd3-ee827ac19144%2Fday01-boom.wav?1533243022562"></audio>
+  <audio data-key="73" id="key73" src="https://cdn.glitch.com/b10f4528-cf24-4eac-9dd3-ee827ac19144%2Fday01-ride.wav?1533243023109"></audio>
+  <audio data-key="74" id="key74" src="https://cdn.glitch.com/b10f4528-cf24-4eac-9dd3-ee827ac19144%2Fday01-snare.wav?1533243023177"></audio>
+  <audio data-key="75" id="key75" src="https://cdn.glitch.com/b10f4528-cf24-4eac-9dd3-ee827ac19144%2Fday01-tom.wav?1533243022478"></audio>
+  <audio data-key="76" id="key76" src="https://cdn.glitch.com/b10f4528-cf24-4eac-9dd3-ee827ac19144%2Fday01-tink.wav?1533243023497"></audio>
+</div>
