@@ -48,6 +48,7 @@
   color: #fff;
 }
 
+/* ----- General Styles ----- */
 body {
   overflow-x: hidden;
   font-family: 'Fira Sans', sans-serif;
@@ -140,6 +141,7 @@ footer {
   padding: 20px 0;
 }
 
+/* ----- Class Styles ----- */
 .center {
   text-align: center;
 }
