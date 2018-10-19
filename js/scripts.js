@@ -44,6 +44,7 @@ document.getElementById('submit-btn').addEventListener('click', function (e) {
         document.querySelector('.contact-section .form-result .error').classList.add('show');
       }
     }
+    xhr.send();
 
     ///////////////// Submit form to Heroku mailer /////////////////
     // var queryString = 'brandon-martin-mail' + '/' + contact.name + "/" + contact.email + "/" +
