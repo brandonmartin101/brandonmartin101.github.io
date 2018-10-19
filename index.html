@@ -35,15 +35,6 @@
 
     <link rel="stylesheet" href="./css/style.css">
 
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-115797654-2"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-        gtag('config', 'UA-115797654-2');
-    </script>
-
 </head>
 
 <body class="index">
@@ -224,7 +215,7 @@
                 <a href="mailto:brandon.martin101@gmail.com">email</a> or using the form below. I'd love to help!</p>
         </div>
         <div>
-            <form name="sentMessage" id="contactForm" onSubmit="submitForm()">
+            <form name="sent-message" id="contact-form" onSubmit="submitForm()" netlify action="/">
                 <div class="row">
                     <div class="col-md-6 col-md-offset-3">
                         <div class="form-group">
@@ -235,6 +226,9 @@
                             <textarea class="form-control" placeholder="Your Message*" id="message" required></textarea>
                         </div>
                     </div>
+                    <p style="display: none !important;">
+                        <label>Don’t fill this out if you're human: <input name="bot-field" /></label>
+                    </p>
                     <div class="clearfix"></div>
                     <div class="col-lg-12 center">
                         <div id="success"></div>
@@ -265,15 +259,13 @@
                         </div>
                     </div>
                 </div>
+
             </form>
         </div>
     </section>
 
     <footer class="center">
-        <div>Copyright &copy; Brandon P Martin 2017-<script>
-                document.write(new Date().getFullYear())
-            </script>
-        </div>
+        <div>Copyright &copy; Brandon P Martin 2017-2018</div>
     </footer>
 
     <script src="./js/scripts.js"></script>

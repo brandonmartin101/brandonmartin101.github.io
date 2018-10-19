@@ -26,12 +26,11 @@ document.getElementById('submit-btn').addEventListener('click', function (e) {
   }
   if (contact.name && contact.email && contact.message) {
     event.preventDefault();
-    var queryString = 'brandon-martin-mail' + '/' + contact.name + "/" + contact.email + "/" +
-      contact.message + "/" +
-      contact.phone;
 
-    var xhr = new XMLHttpRequest();
-    xhr.open('GET', baseUrl + queryString);
+    ///////////////// Submit form to Netlify forms /////////////////
+    const form = document.getElementById('contact-form');
+    let xhr = new XMLHttpRequest();
+    xhr.open('POST', form.action);
     xhr.onload = function () {
       document.querySelector('.contact-section .loading-icon').classList.remove('show');
       if (xhr.status === 200) {
@@ -45,7 +44,28 @@ document.getElementById('submit-btn').addEventListener('click', function (e) {
         document.querySelector('.contact-section .form-result .error').classList.add('show');
       }
     }
-    xhr.send();
+
+    ///////////////// Submit form to Heroku mailer /////////////////
+    // var queryString = 'brandon-martin-mail' + '/' + contact.name + "/" + contact.email + "/" +
+    //   contact.message + "/" +
+    //   contact.phone;
+
+    // var xhr = new XMLHttpRequest();
+    // xhr.open('GET', baseUrl + queryString);
+    // xhr.onload = function () {
+    //   document.querySelector('.contact-section .loading-icon').classList.remove('show');
+    //   if (xhr.status === 200) {
+    //     document.querySelector('.contact-section .form-result .success').classList.add(
+    //       'show');
+    //     document.querySelector('.contact-section .form-result .error').classList.remove(
+    //       'show');
+    //   } else {
+    //     document.querySelector('.contact-section .form-result .success').classList.remove(
+    //       'show');
+    //     document.querySelector('.contact-section .form-result .error').classList.add('show');
+    //   }
+    // }
+    // xhr.send();
   } else {
     document.querySelector('.contact-section .loading-icon').classList.remove('show');
     document.querySelector('.contact-section .form-result .error').classList.add('show');
