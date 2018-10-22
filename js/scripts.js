@@ -1,78 +1,3 @@
-/* SITE LOAD SCRIPT */
-// attempt to wake all heroku dynos that are linked by the site
-var wakeUrls = [
-  'https://cryptic-reef-39583.herokuapp.com/',
-  'https://bpm-ghost.herokuapp.com/',
-  'https://bpm-react-todo.herokuapp.com/',
-  'https://bpm-vue-imgur.herokuapp.com/',
-  'https://bpm-wordpress.herokuapp.com/'
-];
-// ping them one by one
-for (var i = 0; i < wakeUrls.length; i++) document.querySelector('body').insertAdjacentHTML('beforeend',
-  '<script src="' + wakeUrls[i] + '">');
-
-/* CONTACT FORM SCRIPT */
-// check form and ping Heroku app to process email
-document.getElementById('submit-btn').addEventListener('click', function (e) {
-  document.querySelector('.contact-section .form-result > div').classList.remove('show');
-  document.querySelector('.contact-section .loading-icon').classList.add('show');
-  var baseUrl = "https://cryptic-reef-39583.herokuapp.com/";
-  var contact = {
-    'name': encodeURIComponent(document.getElementById('name').value),
-    'email': encodeURIComponent(document.getElementById('email').value),
-    'phone': (document.getElementById('phone').value) ? encodeURIComponent(document.getElementById(
-      'phone').value) : 'no phone',
-    'message': encodeURIComponent(document.getElementById('message').value)
-  }
-  if (contact.name && contact.email && contact.message) {
-    event.preventDefault();
-
-    ///////////////// Submit form to Netlify forms /////////////////
-    const form = document.getElementById('contact-form');
-    let xhr = new XMLHttpRequest();
-    xhr.open('POST', form.action);
-    xhr.onload = function () {
-      document.querySelector('.contact-section .loading-icon').classList.remove('show');
-      if (xhr.status === 200) {
-        document.querySelector('.contact-section .form-result .success').classList.add(
-          'show');
-        document.querySelector('.contact-section .form-result .error').classList.remove(
-          'show');
-      } else {
-        document.querySelector('.contact-section .form-result .success').classList.remove(
-          'show');
-        document.querySelector('.contact-section .form-result .error').classList.add('show');
-      }
-    }
-    xhr.send();
-
-    ///////////////// Submit form to Heroku mailer /////////////////
-    // var queryString = 'brandon-martin-mail' + '/' + contact.name + "/" + contact.email + "/" +
-    //   contact.message + "/" +
-    //   contact.phone;
-
-    // var xhr = new XMLHttpRequest();
-    // xhr.open('GET', baseUrl + queryString);
-    // xhr.onload = function () {
-    //   document.querySelector('.contact-section .loading-icon').classList.remove('show');
-    //   if (xhr.status === 200) {
-    //     document.querySelector('.contact-section .form-result .success').classList.add(
-    //       'show');
-    //     document.querySelector('.contact-section .form-result .error').classList.remove(
-    //       'show');
-    //   } else {
-    //     document.querySelector('.contact-section .form-result .success').classList.remove(
-    //       'show');
-    //     document.querySelector('.contact-section .form-result .error').classList.add('show');
-    //   }
-    // }
-    // xhr.send();
-  } else {
-    document.querySelector('.contact-section .loading-icon').classList.remove('show');
-    document.querySelector('.contact-section .form-result .error').classList.add('show');
-  }
-});
-
 /* LAZY LOADING SCRIPT */
 // progressive-image.js, v1.2
 // by Craig Buckler, @craigbuckler
@@ -167,3 +92,20 @@ if (window.addEventListener && window.requestAnimationFrame && document.getEleme
       }
     }
   }, false);
+
+// TypeForm Integration
+(function () {
+  var qs, js, q, s, d = document,
+    gi = d.getElementById,
+    ce = d.createElement,
+    gt = d.getElementsByTagName,
+    id = "typef_orm_share",
+    b = "https://embed.typeform.com/";
+  if (!gi.call(d, id)) {
+    js = ce.call(d, "script");
+    js.id = id;
+    js.src = b + "embed.js";
+    q = gt.call(d, "script")[0];
+    q.parentNode.insertBefore(js, q)
+  }
+})();
