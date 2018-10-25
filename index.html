@@ -11,7 +11,7 @@
     <meta http-equiv="Pragma" content="no-cache" />
     <meta http-equiv="Expires" content="0" />
     <meta name="google-site-verification" content="4UFVJCSzYpBoXSg7l3sDF1-NgzH7yFN-z_CDpqH9yEE" />
-    <title>Brandon P Martin | Web Developer | WordPress, React.js</title>
+    <title>Brandon P Martin | Web Developer | React.js, Gatsby.js, WordPress</title>
 
     <link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="favicon/apple-icon-60x60.png">
@@ -41,19 +41,14 @@
 
     <header class="about-section">
         <div class="intro-text">
-            <span class="name">BRANDON P MARTIN</span>
-            <div class="portrait-wrap">
-                <img src="img/portrait.jpg" alt="Brandon Martin Portrait" class="portrait">
-            </div>
-            <span class="skills">Web Developer</span>
+            <a href="#about" class="about-link" id="port-back-about">
+                <span class="name">BRANDON P MARTIN</span>
+                <div class="portrait-wrap">
+                    <img src="img/portrait-sm.jpg" alt="Brandon P Martin" class="portrait">
+                </div>
+                <span class="skills">Web Developer</span>
+            </a>
         </div>
-        <p>In need of a unique web presence, that emphasizes your strengths and boosts online sales? I love building
-            custom websites and webapps of all kinds.</p>
-        <p>I have been working in the software industry for five years, working both remotely and with local businesses
-            in Utah, my homeland, and Wisconsin, where I now live.</p>
-        <p>I love learning new technologies, and I don't like to restrict myself to a single type of site. I have
-            experience using the following languages and frameworks: HTML5, CSS3, JavaScript (ES6), React.js, Vue.js,
-            Node.js/Express, PHP, WordPress, and Python. All used to create unique websites that function flawlessly.</p>
         <div class="social-icons center">
             <a href="https://www.facebook.com/brandon.martin.5205622" class="btn-social" target="_blank">
                 <?xml version="1.0" encoding="utf-8"?>
@@ -81,32 +76,32 @@
             <h2>My Work</h2>
         </div>
         <div class="portfolio-items">
-            <a href="#port-1" class="portfolio-link">
+            <a href="#port-1" class="portfolio-link" id="port-back-1">
                 <div class="progressive replace" data-img-src="img/port-voice.jpg">
                     <img src="img/port-voice-preview.jpg" class="img-responsive preview" alt="Kalie Martin Voice Studio">
                 </div>
             </a>
-            <a href="#port-2" class="portfolio-link">
+            <a href="#port-2" class="portfolio-link" id="port-back-2">
                 <div class="progressive replace" data-img-src="img/port-todo.jpg">
                     <img src="img/port-todo-preview.jpg" class="img-responsive preview" alt="React To-Do List">
                 </div>
             </a>
-            <a href="#port-3" class="portfolio-link">
+            <a href="#port-3" class="portfolio-link" id="port-back-3">
                 <div class="progressive replace" data-img-src="img/port-game.jpg">
                     <img src="img/port-game-preview.jpg" class="img-responsive preview" alt="Conway's Game of Life">
                 </div>
             </a>
-            <a href="#port-4" class="portfolio-link">
+            <a href="#port-4" class="portfolio-link" id="port-back-4">
                 <div class="progressive replace" data-img-src="img/port-antiques.jpg">
                     <img src="img/port-antiques-preview.jpg" class="img-responsive preview" alt="Cat's Cradle Antiques">
                 </div>
             </a>
-            <a href="#port-5" class="portfolio-link">
+            <a href="#port-5" class="portfolio-link" id="port-back-5">
                 <div class="progressive replace" data-img-src="img/port-news.jpg">
                     <img src="img/port-news-preview.jpg" class="img-responsive preview" alt="News Hub">
                 </div>
             </a>
-            <a href="#port-6" class="portfolio-link">
+            <a href="#port-6" class="portfolio-link" id="port-back-6">
                 <div class="progressive replace" data-img-src="img/port-password.jpg">
                     <img src="img/port-password-preview.jpg" class="img-responsive preview" alt="Password Generator">
                 </div>
@@ -115,6 +110,20 @@
     </section>
 
     <section class="portfolio-modals">
+        <div id="about" class="modal">
+            <div class="modal-content">
+                <p>In need of a unique web presence, that emphasizes your strengths and boosts online sales? I love
+                    building custom websites and webapps of all kinds.</p>
+                <p>I have been working in the software industry for five years, working both remotely and with local
+                    businesses in Utah, my homeland, and Wisconsin, where I now live.</p>
+                <p>I love learning new technologies, and I don't like to restrict myself to a single type of site. I
+                    have experience using the following languages and frameworks: HTML5, CSS3, JavaScript (ES6),
+                    React.js, Vue.js, Node.js/Express, PHP, WordPress, and Python. All used to create unique websites
+                    that function flawlessly.</p>
+                <a href="#port-back-about" class="about-close">See My Work</a>
+            </div>
+            <a href="#" class="modal-close">X</a>
+        </div>
         <div id="port-1" class="modal">
             <div class="modal-content">
                 <h2>Kalie Martin Voice Studio</h2>
@@ -122,9 +131,10 @@
                     Valley area of Wisconsin. The site was custom-built since there is no ongoing content need, and the
                     main priority of the site is to be fast and simple.</p>
                 <p>Behind the site: JavaScript, TurboLinks, CSS3, and HTML5.</p>
-                <p>The complete site is visible at <a href="https://www.kaliemartinvoicestudio.com" target="_blank">https://www.kaliemartinvoicestudio.com</a>.</p>
+                <p>The complete site is visible at <a href="https://www.kaliemartinvoicestudio.com" target="_blank">Kalie
+                        Martin Voice Studio</a>.</p>
             </div>
-            <a href="#" class="modal-close">X</a>
+            <a href="#port-back-1" class="modal-close">X</a>
         </div>
         <div id="port-2" class="modal">
             <div class="modal-content">
@@ -135,7 +145,7 @@
                 <!-- Move this to Glitch or CodePen -->
                 <p>A demo of this app is available at <a href="https://bpm-react-todo.herokuapp.com/" target="_blank">https://bpm-react-todo.herokuapp.com/</a>.</p>
             </div>
-            <a href="#" class="modal-close">X</a>
+            <a href="#port-back-2" class="modal-close">X</a>
         </div>
         <div id="port-3" class="modal">
             <div class="modal-content">
@@ -146,7 +156,7 @@
                 <p>Behind the app: React.js</p>
                 <p>A demo of this app is available on <a href="https://codepen.io/brandonmartin101/full/jrOQzW/" target="_blank">CodePen</a>.</p>
             </div>
-            <a href="#" class="modal-close">X</a>
+            <a href="#port-back-3" class="modal-close">X</a>
         </div>
         <div id="port-4" class="modal">
             <div class="modal-content">
@@ -154,7 +164,7 @@
                 <p>This project was built for a local business. The site is built on a custom WordPress theme
                     that integrates the site with the company's Facebook business page.</p>
             </div>
-            <a href="#" class="modal-close">X</a>
+            <a href="#port-back-4" class="modal-close">X</a>
         </div>
         <div id="port-5" class="modal">
             <div class="modal-content">
@@ -163,7 +173,7 @@
                     thousands of news organizations.</p>
                 <p>A demo of this app is visible on <a href="https://bpm-news-hub.glitch.me/" target="_blank">Glitch</a>.</p>
             </div>
-            <a href="#" class="modal-close">X</a>
+            <a href="#port-back-5" class="modal-close">X</a>
         </div>
         <div id="port-6" class="modal">
             <div class="modal-content">
@@ -172,7 +182,7 @@
                     passphrases.</p>
                 <p>A demo of this app is visible on <a href="https://bpm-password-gen.glitch.me/" target="_blank">Glitch</a>.</p>
             </div>
-            <a href="#" class="modal-close">X</a>
+            <a href="#port-back-6" class="modal-close">X</a>
         </div>
     </section>
 
